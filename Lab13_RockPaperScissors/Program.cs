@@ -21,62 +21,81 @@ namespace Lab13_RockPaperScissors
 
                 MainUser = new User(UserName);
             }
-          
 
-            Console.WriteLine("Would you like to play against Rocky Balboa or Randasha? (RB/R)");
-            string Opponent = Console.ReadLine().ToUpper();
-
-            Player O;
-            Roshambo choice;
-
-            string OpName;
-            if (Opponent == "RB") //do validation
+            bool repeat = true;
+            while (repeat)
             {
-                O = new RockyBalboa();
-            }
-            else //(Opponent == "R")
-            {
-                O = new Randasha();
-            }
-            choice = O.generateRoshambo();
-            OpName = O.Name;
+                Console.WriteLine("\nWould you like to play against Rocky Balboa or Randasha? (RB/R)");
+                string Opponent = Console.ReadLine().ToUpper();
+                while (Opponent != "RB" && Opponent != "R")
+                {
+                    Console.WriteLine("That is not a valid input. Please try again.");
+                    Opponent = Console.ReadLine().ToUpper();
+                }
+
+                Player O;
+
+                if (Opponent == "RB") //do validation
+                {
+                    O = new RockyBalboa("Rocky Balboa");
+                }
+                else //(Opponent == "R")
+                {
+                    O = new Randasha("Randasha");
+                }
+                O.Magic = O.generateRoshambo();
+                MainUser.Magic = MainUser.generateRoshambo();
+                Console.WriteLine($"\n{MainUser.Name} picked {MainUser.Magic}");
+                Console.WriteLine($"{O.Name} picked {O.Magic}");
 
 
-            Console.WriteLine($"{OpName} chose {choice}");
+                if (MainUser.Magic == O.Magic)
+                {
+                    Console.WriteLine("It's a draw!");
+                }
+                else if (MainUser.Magic == Roshambo.paper)
+                {
+                    if (O.Magic == Roshambo.scissors)
+                    {
+                        Console.WriteLine($"{O.Name} wins");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{MainUser.Name} wins");
+                    }
+                }
+                else if (MainUser.Magic == Roshambo.rock)
+                {
+                    if (O.Magic == Roshambo.scissors)
+                    {
+                        Console.WriteLine($"{MainUser.Name} wins");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{O.Name} wins");
+                    }
+                }
+                else if (MainUser.Magic == Roshambo.scissors)
+                {
+                    if (O.Magic == Roshambo.paper)
+                    {
+                        Console.WriteLine($"{MainUser.Name} wins");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{O.Name} wins");
+                    }
+                }
+                Console.WriteLine("\nWould you like to play again? (Y/N)");
+                string Response = Console.ReadLine().ToUpper();
 
-            MainUser.generateRoshambo();
-
-
-            if (MainUser.generateRoshambo() == O.generateRoshambo())
-            {
-                Console.WriteLine("It's a draw!");
+                while (Response != "Y" && Response != "N")
+                {
+                    Console.WriteLine("That is not a valid input. Please try again.");
+                    Response = Console.ReadLine().ToUpper();
+                }
+                repeat = false;
             }
-            else if (MainUser.generateRoshambo() == Roshambo.rock && O.generateRoshambo() == Roshambo.paper)
-            {
-                Console.WriteLine($"{OpName} wins!");
-            }
-            else if (MainUser.generateRoshambo() == Roshambo.rock && O.generateRoshambo() == Roshambo.scissors)
-            {
-                Console.WriteLine("You win!");
-            }
-            else if (MainUser.generateRoshambo() == Roshambo.paper && O.generateRoshambo() == Roshambo.rock)
-            {
-                Console.WriteLine($"{OpName} wins!");
-            }
-            else if (MainUser.generateRoshambo() == Roshambo.paper && O.generateRoshambo() == Roshambo.scissors)
-            {
-                Console.WriteLine($"{OpName} wins!");
-            }
-            else if (MainUser.generateRoshambo() == Roshambo.scissors && O.generateRoshambo() == Roshambo.paper)
-            {
-                Console.WriteLine("You win!");
-            }
-            else if (MainUser.generateRoshambo() == Roshambo.scissors && O.generateRoshambo() == Roshambo.rock)
-            {
-                Console.WriteLine($"{OpName} wins!");
-            }
-
-
         }
         static bool Validate1(string UserName)
         {

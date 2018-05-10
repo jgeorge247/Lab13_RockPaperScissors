@@ -8,9 +8,9 @@ namespace Lab13_RockPaperScissors
 {
     class RockyBalboa : Player
     {
-        public RockyBalboa()
+        public RockyBalboa(string n) : base (n)
         {
-            Name = ("RockyBalboa");
+
         }
         override public Roshambo generateRoshambo()
         {

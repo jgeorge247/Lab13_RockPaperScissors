@@ -8,9 +8,9 @@ namespace Lab13_RockPaperScissors
 {
     class User : Player
     {
-        public User (string Name)
+        public User (string n) : base (n)
         {
-            this.Name = Name;
+          
         }
         override public Roshambo generateRoshambo()
         {
@@ -21,8 +21,12 @@ namespace Lab13_RockPaperScissors
             while (UserInput != "R" && UserInput != "P" && UserInput != "S")
             {
                 Console.WriteLine("That is not a valid input. Please try again.");
-                continue;
+                UserInput = Console.ReadLine().ToUpper();
             }
+            //else if (UserInput == "R" || UserInput == "P" || UserInput == "S")
+            //{
+               
+            //}
 
             if (UserInput == "R")
             {
@@ -36,7 +40,7 @@ namespace Lab13_RockPaperScissors
             {
                 return Roshambo.scissors;
             }
-            return;
+            
         }
     }
 }
