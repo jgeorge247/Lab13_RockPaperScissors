@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab13_RockPaperScissors", "Lab13_RockPaperScissors\Lab13_RockPaperScissors.csproj", "{58411A77-512E-48F6-A877-786F2313CE2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7AF944F-1903-40D6-8321-5E00A5967F92}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58411A77-512E-48F6-A877-786F2313CE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58411A77-512E-48F6-A877-786F2313CE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58411A77-512E-48F6-A877-786F2313CE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58411A77-512E-48F6-A877-786F2313CE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F87F1AAE-926B-4927-AA06-DAE4CA644C67}
+	EndGlobalSection
+EndGlobal
